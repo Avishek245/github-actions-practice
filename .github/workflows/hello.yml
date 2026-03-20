@@ -13,3 +13,18 @@ jobs:
 
       - name: Say Hello
         run: echo "Hello from GitHub Actions!"
+
+      - name: Print current date and time
+        run: date
+
+      - name: Print Current time
+        run: date +"%T"
+
+      - name: Print branch name
+        run: echo "Current branch ${{ github.ref_name }}"
+
+      - name: List files in the repository
+        run: ls -la
+
+      - name: Print Runner OS
+        run: echo "Running on ${{ runner.os }}"
