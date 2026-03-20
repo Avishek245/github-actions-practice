@@ -28,6 +28,3 @@ jobs:
 
       - name: Print Runner OS
         run: echo "Running on ${{ runner.os }}"
-
-      - name: Print Error message
-        run: exit 1
