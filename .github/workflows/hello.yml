@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: checkout code
-      run: action/checkout@v4
+      run: actions/checkout@v4
 
     - name: say hello
       run: echo "Hello from Github Actions!"
