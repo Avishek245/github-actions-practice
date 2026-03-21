@@ -1,0 +1,25 @@
+name: Manual Trigger workflow
+
+on: 
+    workflow_dispatch: 
+        inputs:
+            environment: 
+                description: "Enter Environment (staging/production)"
+                default: 'staging'
+                required: true
+                type: choice
+                options: 
+                    - staging
+                    - production
+
+jobs: 
+    manual-trigger: 
+        runs-on: ubuntu-latest
+        steps: 
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: print the steps 
+              run: echo " Deploying to ${{github.event.inputs.environment}}"
+
+
