@@ -1,0 +1,17 @@
+name: Self hosted test
+
+on: 
+  workflow_dispatch: 
+
+
+jobs: 
+ self-hosted-runner: 
+  runs-on: self-hosted
+  steps: 
+    - name: print machine info
+      run: | 
+        hostname
+        pwd
+        touch test-file.txt
+        ls -la
+
