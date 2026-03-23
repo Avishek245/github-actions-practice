@@ -1,0 +1,39 @@
+name: Mutlilevel-os
+
+on: 
+    push:
+        branches: [main]
+
+
+jobs: 
+    ubuntu-job: 
+        runs-on: ubuntu-latest
+
+        steps: 
+            - name : print system info
+              run: |
+                echo "Running os $(uname -a)"
+                echo "Hostname is $(hostname)"
+                echo "Current user is $(whoami)"
+            
+    windows-job:
+        runs-on: windows-latest
+
+
+        steps: 
+            - name : print system info
+              run: |
+                echo "Running os $(uname -a)"
+                echo "Hostname is $(hostname)"
+                echo "Current user is $(whoami)"
+
+    macos-job:
+        runs-on: macos-latest
+
+
+        steps: 
+            - name : print system info
+              run: |
+                echo "Running os $(uname -a)"
+                echo "Hostname is $(hostname)"
+                echo "Current user is $(whoami)"
