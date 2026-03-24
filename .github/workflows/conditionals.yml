@@ -1,0 +1,25 @@
+name: contionals demo
+
+on: 
+    push: 
+    pull_request:
+        
+
+jobs:
+    conditional-job: 
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Only runs on main
+              if: github.ref == 'refs/heads/main'
+              run: echo "This job runs only on push to main branch"
+
+            - name: Failing step
+              run: exit 1
+
+            - name: Handle failure
+              if: failure()
+              run: echo "Previous step failed, but this step runs to handle the failure"
+
+            
