@@ -19,7 +19,7 @@ jobs:
               env: 
                 VERSION: "1.0.0" #Step level
               run: |
-                echo" Application Name: $APP_NAME"
+                echo " Application Name: $APP_NAME"
                 echo "Job Environment: $JOB_ENV"
                 echo "Version: $VERSION"
                 echo "commit SHA: $GITHUB_SHA"
