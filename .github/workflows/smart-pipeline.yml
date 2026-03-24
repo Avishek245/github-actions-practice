@@ -3,7 +3,7 @@ name: Smart Pipeline
 on: 
     push: 
         branches: 
-            - '***'
+            - '**'
 
 
 
