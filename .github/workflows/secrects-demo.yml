@@ -28,6 +28,6 @@ jobs:
               run: echo "This my log file content $(date) " > log.txt
 
             - name: Upload log file as artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                 name: log-file
