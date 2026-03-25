@@ -1,0 +1,17 @@
+name: Run Real Test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x health-check.sh
+
+      - name: Run script
+        run: ./health-check.sh
