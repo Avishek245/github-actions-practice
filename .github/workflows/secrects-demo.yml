@@ -22,7 +22,8 @@ jobs:
             - name: Use secret in a command
               env:
                 SECRET_MESSAGE: ${{ secrets.MY_SECRET_MESSAGE }}
-              run: echo "Using secret in safely 
+              run: |
+               echo "Using secret in safely"
 
             - name: create a log file
               run: echo "This my log file content $(date) " > log.txt
