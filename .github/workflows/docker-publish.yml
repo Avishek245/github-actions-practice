@@ -10,6 +10,9 @@ jobs:
             - name: checkout code
               uses: actions/checkout@v4
 
+            - name: set short SHA
+              run: echo "SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)"
+
             - name: Log in to DockerHub
               uses: docker/login-action@v3
               with:
@@ -21,4 +24,6 @@ jobs:
               with:
                     context: .
                     push: true
-                    tags: ${{ secrets.DOCKER_USERNAME }}/github-actions-practice
+                    tags: |
+                     ${{ secrets.DOCKER_USERNAME }}/github-actions-practice
+                     ${{ secrets.DOCKER_USERNAME }}/github-actions-practice:sha-${{ env.SHORT_SHA }}
