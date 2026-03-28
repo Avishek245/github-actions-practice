@@ -1,0 +1,21 @@
+name: Use Composite Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use custom action
+        uses: ./.github/actions/setup-and-greet
+        with:
+          name: "Avishek"
+          language: "en"
+
+      - name: Done
+        run: echo "Composite action executed"
