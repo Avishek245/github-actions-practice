@@ -16,7 +16,7 @@ jobs:
 
       - name: Health Check
         run: |
-          STATUS=$(curl -o /dev/null -s -w "%{http_code}" https://example.com)
+          STATUS=$(curl -o /dev/null -s -w "%{http_code}" https://google.com)
           echo "Response Code: $STATUS"
           if [ "$STATUS" -ne 200 ]; then
             echo "Health check failed"
