@@ -1,0 +1,13 @@
+name: Ignore Docs
+
+on:
+  push:
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Not triggered by docs only change"
