@@ -2,6 +2,7 @@ name: Job out demo
 
 on:
     push:
+    workflow_dispatch:
 
 
 jobs: 

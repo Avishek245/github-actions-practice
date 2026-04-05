@@ -2,6 +2,7 @@ name: Environment Variables job
 
 on: 
     push: 
+    workflow_dispatch:
 
 env:
     APP_NAME: "MyApp" #Work flow level
